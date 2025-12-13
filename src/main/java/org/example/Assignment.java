@@ -24,6 +24,10 @@ public class Assignment {
         this.scores = new ArrayList<>();
     }
 
+    /**
+     * Calculates the average score for the assignment
+     * @return the average score
+     */
     public double calcAssignmentAvg() {
         if (scores.isEmpty()) {
             return 0.0;
