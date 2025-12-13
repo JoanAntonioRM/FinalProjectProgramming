@@ -7,20 +7,20 @@ public class Util {
         }
 
         String[] words = str.split(" ");
-        StringBuilder result = new StringBuilder();
+        String result = "";
 
         for (int i = 0; i < words.length; i++) {
             if (!words[i].isEmpty()) {
-                result.append(Character.toUpperCase(words[i].charAt(0)));
+                result += Character.toUpperCase(words[i].charAt(0));
                 if (words[i].length() > 1) {
-                    result.append(words[i].substring(1).toLowerCase());
+                    result += words[i].substring(1).toLowerCase();
                 }
             }
             if (i < words.length - 1) {
-                result.append(" ");
+                result += " ";
             }
         }
 
-        return result.toString();
+        return result;
     }
 }
