@@ -52,7 +52,7 @@ public class Department {
      */
     public void setDepartmentName(String departmentName) {
         if (isDepartmentNameValid(departmentName)) {
-            this.departmentName = departmentName;
+            this.departmentName = Util.toTitleCase(departmentName);
         }
     }
 }
