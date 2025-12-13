@@ -27,6 +27,11 @@ public class Student {
         this.registeredCourses = new ArrayList<>();
     }
 
+    /**
+     * Registers a course for the student
+     * @param course the course to register
+     * @return true if successfully registered, false if already registered
+     */
     public boolean registerCourse(Course course) {
         if (registeredCourses.contains(course)) {
             return false;
@@ -42,6 +47,11 @@ public class Student {
         return true;
     }
 
+    /**
+     * Drops a course for the student
+     * @param course the course to drop
+     * @return true if successfully dropped, false if not registered
+     */
     public boolean dropCourse(Course course) {
         if (!registeredCourses.contains(course)) {
             return false;
@@ -67,19 +77,19 @@ public class Student {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(String.format("Student ID: %s\n", studentId));
-        sb.append(String.format("Name: %s\n", studentName));
-        sb.append(String.format("Gender: %s\n", gender));
-        sb.append(String.format("Address: %s\n", address));
-        sb.append(String.format("Department: %s\n", department != null ? department.getDepartmentName() : "N/A"));
-        sb.append("Registered Courses:\n");
+        String result = "";
+        result += String.format("Student ID: %s\n", studentId);
+        result += String.format("Name: %s\n", studentName);
+        result += String.format("Gender: %s\n", gender);
+        result += String.format("Address: %s\n", address);
+        result += String.format("Department: %s\n", department != null ? department.getDepartmentName() : "N/A");
+        result += "Registered Courses:\n";
 
         for (Course course : registeredCourses) {
-            sb.append(String.format("  - %s\n", course.toSimplifiedString()));
+            result += String.format("  - %s\n", course.toSimplifiedString());
         }
 
-        return sb.toString();
+        return result;
     }
 
     public void setStudentName(String studentName) {
