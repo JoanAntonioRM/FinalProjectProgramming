@@ -1,8 +1,8 @@
 package org.example;
 
 public class Util {
-    public static String toTitleCase(String str){
-        if (str == null || str.isEmpty()){
+    public static String toTitleCase(String str) {
+        if (str == null || str.isEmpty()) {
             return null;
         }
 
