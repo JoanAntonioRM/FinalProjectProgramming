@@ -3,6 +3,7 @@ package org.example;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.example.util.Util;
 
 import java.util.ArrayList;
 
@@ -21,7 +22,7 @@ public class Course {
     public Course(String courseName, double credits, Department department) {
         String deptId = (department != null) ? department.getDepartmentId() : "D00";
         this.courseId = String.format("C-%s-%02d", deptId, nextId++);
-        this.courseName = courseName;
+        this.courseName = Util.toTitleCase(courseName);
         this.credits = credits;
         this.department = department;
         this.assignments = new ArrayList<>();
