@@ -1,4 +1,4 @@
-package org.example;
+package org.example.util;
 
 public class Util {
     public static String toTitleCase(String str) {
